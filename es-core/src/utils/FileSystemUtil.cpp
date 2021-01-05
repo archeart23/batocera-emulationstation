@@ -34,8 +34,29 @@ namespace Utils
 {
 	namespace FileSystem
 	{
-		static std::string homePath;
-		static std::string exePath;
+		std::string getEsConfigPath()
+		{
+#ifdef WIN32
+			static std::string cfg;
+			if (cfg.empty())
+				cfg = Utils::FileSystem::getCanonicalPath(Utils::FileSystem::getHomePath() + "/.emulationstation");
+
+			return cfg;
+#else
+			return "/.emulationstation"; // batocera
+#endif
+		}
+
+		std::string getSharedConfigPath()
+		{
+#ifdef WIN32
+			return Utils::FileSystem::getExePath();
+#else
+			return "/usr/share/emulationstation"; // batocera
+#endif
+		}
+
+	// FileCache
 
 		struct FileCache
 		{
