@@ -39,11 +39,11 @@ namespace Utils
 #ifdef WIN32
 			static std::string cfg;
 			if (cfg.empty())
-				cfg = Utils::FileSystem::getCanonicalPath(Utils::FileSystem::getHomePath() + "~/.emulationstation");
+				cfg = Utils::FileSystem::getCanonicalPath(Utils::FileSystem::getHomePath() + "/.emulationstation");
 
 			return cfg;
 #else
-			return "/userdata/system/configs/emulationstation"; // batocera
+			return "/.emulationstation"; // batocera
 #endif
 		}
 
