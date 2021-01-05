@@ -28,20 +28,20 @@ sudo dnf install SDL2-devel freeimage-devel freetype-devel curl-devel \
 Note this Repository uses a git submodule - to checkout the source and all submodules, use
 
 ```bash
-git clone --recursive https://github.com/RetroPie/EmulationStation.git
+git clone --recursive https://github.com/archeart23/batocera-emulationstation.git
 ```
 
 or 
 
 ```bash
-git clone https://github.com/RetroPie/EmulationStation.git
-cd EmulationStation
+git clone https://github.com/archeart23/batocera-emulationstation.git
+cd batocera-emulationstation
 git submodule update --init
 ```
 
 Then, generate and build the Makefile with CMake:
 ```bash
-cd YourEmulationStationDirectory
+cd batocera-emulationstation
 cmake .
 make
 ```
