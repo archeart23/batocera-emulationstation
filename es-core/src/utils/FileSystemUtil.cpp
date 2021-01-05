@@ -42,8 +42,6 @@ namespace Utils
 				cfg = Utils::FileSystem::getCanonicalPath(Utils::FileSystem::getHomePath() + "/.emulationstation");
 
 			return cfg;
-#else
-			return "/.emulationstation"; // batocera
 #endif
 		}
 
@@ -51,8 +49,6 @@ namespace Utils
 		{
 #ifdef WIN32
 			return Utils::FileSystem::getExePath();
-#else
-			return "/usr/share/emulationstation"; // batocera
 #endif
 		}
 
