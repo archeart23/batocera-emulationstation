@@ -245,7 +245,8 @@ std::string queryIPAdress()
 			char addressBuffer[INET_ADDRSTRLEN];
 			inet_ntop(AF_INET, tmpAddrPtr, addressBuffer, INET_ADDRSTRLEN);
 			
-			if (std::string(ifa->ifa_name).find("eth") != std::string::npos || std::string(ifa->ifa_name).find("wlan") != std::string::npos) 
+			if (std::string(ifa->ifa_name).find("eth") != std::string::npos || std::string(ifa->ifa_name).find("wlan") != std::string::npos ||
+                std::string(ifa->ifa_name).find("en") != std::string::npos || std::string(ifa->ifa_name).find("wl") != std::string::npos) 
 			{
 				result = std::string(addressBuffer);
 				break;
